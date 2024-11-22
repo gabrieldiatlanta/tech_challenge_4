@@ -41,7 +41,7 @@ if st.session_state.previsao_feita:
         'xaxis': {'title': 'Data', 'title_font': {'color': 'black'}, 'tickfont': {'color': 'black'}},
         'yaxis': {'title': 'Preço por Barril (US$)', 'title_font': {'color': 'black'}, 'tickfont': {'color': 'black'}}
     })
-    fig.update_layout(xaxis=dict(range=[st.session_state['dados_previsao']['ds'].tail(dias*2).min(), st.session_state['dados_previsao']['ds'].max()]))
+    fig.update_layout(xaxis=dict(range=[st.session_state['dados_previsao']['ds'].tail(dias*3).min(), st.session_state['dados_previsao']['ds'].max()]))
     st.plotly_chart(fig)
 
     previsao = st.session_state['dados_previsao']
