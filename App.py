@@ -14,7 +14,9 @@ modelo = load_model()
 # Adicionando textos ao layout do Streamlit
 st.title('Previsão do Preço por barril do petróleo bruto Brent Utilizando a Biblioteca Prophet')
 
-st.caption('''Preço por barril do petróleo bruto tipo Brent. Produzido no Mar do Norte (Europa), Brent é uma classe de petróleo bruto que serve como benchmark para o preço internacional de diferentes tipos de petróleo. Neste caso, é valorado no chamado preço FOB (free on board), que não inclui despesa de frete e seguro no preço. Mais informações: https://www.eia.gov/dnav/pet/TblDefs/pet_pri_spt_tbldef2.asp''')
+st.caption('''Projeto com a biblioteca Prophet para prever preços do petróleo Brent. 
+Treinado até 18/11/2024, o modelo apresenta RMSE de 7.57. Insira o número de dias para previsão 
+e visualize um gráfico interativo e uma tabela com os valores estimados.''')
 
 st.subheader('Insira o número de dias para previsão:')
 
@@ -31,15 +33,16 @@ if st.button('Prever'):
     st.session_state['dados_previsao'] = previsao
 
 if st.session_state.previsao_feita:
-    #fig = plot_plotly(modelo, st.session_state['dados_previsao'])
-    #fig.update_layout({
-    #    'plot_bgcolor': 'rgba(255, 255, 255, 1)',  # Define o fundo da área do gráfico como branco
-    #    'paper_bgcolor': 'rgba(255, 255, 255, 1)', # Define o fundo externo ao gráfico como branco
-    #    'title': {'text': "Previsão do Preço por Barril do Petróleo", 'font': {'color': 'black'}},
-    #    'xaxis': {'title': 'Data', 'title_font': {'color': 'black'}, 'tickfont': {'color': 'black'}},
-    #    'yaxis': {'title': 'Preço por Barril (US$)', 'title_font': {'color': 'black'}, 'tickfont': {'color': 'black'}}
-    #})
-    #st.plotly_chart(fig)
+    fig = plot_plotly(modelo, st.session_state['dados_previsao'])
+    fig.update_layout({
+        'plot_bgcolor': 'rgba(255, 255, 255, 1)',  # Define o fundo da área do gráfico como branco
+        'paper_bgcolor': 'rgba(255, 255, 255, 1)', # Define o fundo externo ao gráfico como branco
+        'title': {'text': "Previsão do Preço por Barril do Petróleo", 'font': {'color': 'black'}},
+        'xaxis': {'title': 'Data', 'title_font': {'color': 'black'}, 'tickfont': {'color': 'black'}},
+        'yaxis': {'title': 'Preço por Barril (US$)', 'title_font': {'color': 'black'}, 'tickfont': {'color': 'black'}}
+    })
+    fig.update_layout(xaxis=dict(range=[st.session_state['dados_previsao']['ds'].tail(dias*2).min(), st.session_state['dados_previsao']['ds'].max()]))
+    st.plotly_chart(fig)
 
     previsao = st.session_state['dados_previsao']
     tabela_previsao = previsao[['ds', 'yhat']].tail(dias)
