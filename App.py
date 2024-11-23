@@ -4,6 +4,10 @@ from prophet.serialize import model_from_json
 import pandas as pd
 from prophet.plot import plot_plotly
 
+st.set_page_config(
+    layout='wide'
+)
+
 def load_model():
     with open('modelo_prophet.json', 'r') as file_in:
         modelo = model_from_json(json.load(file_in))
@@ -42,7 +46,7 @@ if st.session_state.previsao_feita:
         'yaxis': {'title': 'Preço por Barril (US$)', 'title_font': {'color': 'black'}, 'tickfont': {'color': 'black'}}
     })
     fig.update_layout(xaxis=dict(range=[st.session_state['dados_previsao']['ds'].tail(dias*3).min(), st.session_state['dados_previsao']['ds'].max()]))
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, use_container_width=True)
 
     previsao = st.session_state['dados_previsao']
     tabela_previsao = previsao[['ds', 'yhat']].tail(dias)
