@@ -11,13 +11,14 @@ st.set_page_config(
 )
 
 # Adicionando textos ao layout do Streamlit
-st.title('Análise de Tendências e Impactos do Preço do Petróleo Brent nos Negócios da Shell')
+st.title('Análise de Tendências e Impactos do Preço do Petróleo Brent')
 st.caption('Por GV Consultoria')
+st.caption('Integrantes: Antônio Gabriel Di Atlanta Valente e Vanessa Larize Alves de Carvalho')
 
 st.write('''
 O petróleo Brent é um dos principais indicadores do mercado global de energia, desempenhando um papel crucial na determinação dos custos e margens de produtos refinados, como combustíveis e petroquímicos. 
 
-Para a Shell, que opera em mercados dinâmicos e enfrenta desafios como volatilidade de preços, mudanças regulatórias e transições para fontes de energia mais limpas, compreender as tendências do Brent é essencial para manter a competitividade.
+Para a indústria petroquímica, que opera em mercados dinâmicos e enfrenta desafios como volatilidade de preços, mudanças regulatórias e transições para fontes de energia mais limpas, compreender as tendências do Brent é essencial para manter a competitividade.
 
 Este dashboard foi projetado para fornecer insights profundos sobre o comportamento histórico e atual dos preços do petróleo Brent, além de permitir identificar padrões, correlacionar eventos geopolíticos e econômicos com as flutuações do mercado, fornecendo assim suporte na tomada de decisões estratégicas.
 '''
