@@ -33,9 +33,9 @@ st.write('''
 
 - Guiar decisões estratégicas: Utilize insights para otimizar compras de petróleo, estratégias de refino e negociações no mercado;
 
-- Prever valores futuros do petróleo Brent com machine learning: Com a aplicação de um modelo preditivo baseado em algoritmos de machine learning, oferecemos projeções dos preços futuros do barril de petróleo. Isso ajuda a Shell a tomar decisões proativas, reduzindo a exposição a riscos e maximizando as oportunidades em cenários de alta volatilidade. 
+- Prever valores futuros do petróleo Brent com machine learning: Com a aplicação de um modelo preditivo baseado em algoritmos de machine learning, oferecemos projeções dos preços futuros do barril de petróleo. Isso ajuda a tomar decisões proativas, reduzindo a exposição a riscos e maximizando as oportunidades em cenários de alta volatilidade. 
 
-Prepare-se para descobrir como dados bem analisados podem transformar desafios em oportunidades e fortalecer a liderança da Shell no setor energético global.
+Prepare-se para descobrir como dados bem analisados podem transformar desafios em oportunidades e fortalecer a liderança no setor energético global.
 
 ''')
 
@@ -45,7 +45,7 @@ st.write(
     '''
 Como mostrado no gráfico abaixo, é possível identificar alguns picos e vales no preço do barril que merecem destaque.
 
-Vamos focar em quatro deles, e para tornar o dashboard mais interativo e direcionado à análise desejada, será possível aplicar filtros de datas e selecionar os eventos mais relevantes.
+Vamos focar em quatro deles e, para tornar o dashboard mais interativo e direcionado à análise desejada, será possível aplicar filtros de datas e selecionar os eventos mais relevantes.
 '''
 )
 
@@ -129,7 +129,7 @@ if escolha == "2008-2009: Crise Financeira Global":
     
     A menor atividade econômica gerada pela crise reduziu a demanda por petróleo em setores como transporte e manufatura, contribuindo para a forte desvalorização do preço do barril.
 
-    O preço do petróleo Brent sofreu uma queda abrupta entre meados de 2008 e o início de 2009, saindo de cerca de \$ 140 por barril em julho de 2008 para menos de \$ 40 em janeiro de 2009.
+    O preço do petróleo Brent sofreu uma queda abrupta entre meados de 2008 e o início de 2009, saindo de cerca de US\$ 140 por barril em julho de 2008 para menos de US\$ 40 em janeiro de 2009.
     '''
     )
 
@@ -142,11 +142,11 @@ if escolha == "2014-2016: Colapso do Petróleo":
     
     Paralelamente, a Organização dos Países Exportadores de Petróleo (OPEP) decidiu não cortar sua produção, optando por manter a oferta elevada como estratégia para proteger sua participação de mercado diante da concorrência crescente do petróleo não convencional.
 
-    Esse excesso de oferta no mercado global foi agravado por uma desaceleração na demanda, especialmente em economias emergentes como a China, que enfrentavam desafios econômicos e redução no ritmo de crescimento industrial. 
+    Esse excesso de oferta no mercado global foi agravado por uma desaceleração na demanda, especialmente em economias emergentes como a China, que enfrentou desafios econômicos e redução no ritmo de crescimento industrial. 
     
     Essa combinação de alta oferta e demanda enfraquecida resultou em um desequilíbrio significativo no mercado.
 
-    Como consequência, o preço do petróleo Brent, despencou de aproximadamente \$ 110 por barril em meados de 2014 para menos de 30 no início de 2016, marcando um dos períodos mais críticos para a indústria petrolífera nas últimas décadas. 
+    Como consequência, o preço do petróleo Brent, despencou de aproximadamente US\$ 110 por barril em meados de 2014 para menos de 30 no início de 2016, marcando um dos períodos mais críticos para a indústria petrolífera nas últimas décadas. 
     O
     Essa crise impactou severamente as economias dependentes de exportação de petróleo, como Rússia e Venezuela, além de forçar grandes cortes de custos e reestruturações em empresas do setor.
     '''
@@ -161,7 +161,7 @@ if escolha == "2020: Pandemia de COVID-19":
     
     O setor de transporte foi especialmente afetado: as viagens aéreas praticamente cessaram, enquanto o transporte rodoviário sofreu uma queda acentuada, levando a um declínio sem precedentes no consumo de petróleo.
     
-    Como resultado, o preço do petróleo Brent despencou rapidamente, caindo para menos de \$ 10 por barril em abril de 2020. 
+    Como resultado, o preço do petróleo Brent despencou rapidamente, caindo para menos de US\$ 10 por barril em abril de 2020. 
     
     Este foi um dos níveis mais baixos registrados na história recente, gerando uma crise profunda para a indústria petrolífera e impactando severamente países e empresas dependentes da produção de petróleo.
     '''
@@ -178,7 +178,7 @@ if escolha == "2022: Conflito Rússia-Ucrânia":
     
     A dependência europeia dos recursos energéticos russos colocou governos e empresas em alerta, forçando a busca por alternativas de fornecimento.
 
-    Como reflexo dessas tensões, o preço do petróleo Brent disparou, alcançando cerca de \$ 130 por barril em meados do primeiro semestre de 2022, marcando uma das maiores altas em anos. 
+    Como reflexo dessas tensões, o preço do petróleo Brent disparou, alcançando cerca de US\$ 130 por barril em meados do primeiro semestre de 2022, marcando uma das maiores altas em anos. 
     
     Este aumento significativo exerceu forte impacto sobre a inflação global e intensificou os debates sobre segurança energética e transição para fontes renováveis.
     '''
