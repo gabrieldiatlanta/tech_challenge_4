@@ -1,0 +1,3 @@
+Nessa pasta consta todos os arquivos usados no projeto.
+
+Para acessar o trabalho no Streamlit, favor acessar o seguinte link: https://techchallenge4-gv.streamlit.app
