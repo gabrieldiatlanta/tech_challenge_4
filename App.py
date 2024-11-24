@@ -54,7 +54,7 @@ dados['data'] = pd.to_datetime(dados['data'])
 dados = dados.set_index('data')
 
 # Lista de opções para o combobox
-opcoes = ["Nenhum", "2008-2009: Crise Financeira Global", "2014-2016: Colapso do Petróleo", "2020: Pandemia de COVID-19", "2022: Conflito Rússia-Ucrânia"]
+opcoes = ["Selecione um evento relevante", "2008-2009: Crise Financeira Global", "2014-2016: Colapso do Petróleo", "2020: Pandemia de COVID-19", "2022: Conflito Rússia-Ucrânia"]
 
 # Intervalos associados aos eventos
 eventos = {
@@ -66,7 +66,7 @@ eventos = {
 
 # Criando o combobox
 escolha = st.selectbox(
-    "**Selecione um evento relevante**:",  # Texto de instrução
+    " ",  # Texto de instrução
     opcoes,                  # Lista de opções
     index=0                  # Índice padrão (opcional, padrão é 0)
 )
@@ -94,7 +94,7 @@ fig.add_trace(go.Scatter(
 ))
 
 # Verificar se um evento foi selecionado
-if escolha != "Nenhum":
+if escolha != "Selecione um evento relevante":
 
     # Obter o intervalo de datas do evento selecionado
     highlight_start, highlight_end = eventos[escolha]
@@ -184,7 +184,38 @@ if escolha == "2022: Conflito Rússia-Ucrânia":
     '''
     )
 
+st.subheader('Impacto dos eventos globais nos preços do Petróleo')
+
+st.write('''
+Após analisar cada um desses eventos separadamente, podemos destacar a importância de acompanhar atentamente os acontecimentos globais para identificar oportunidades e mitigar riscos que podem impactar diretamente os negócios e o planejamento estratégico.
+
+A Crise Financeira Global (2008-2009) mostrou a importância de prever e responder à volatilidade do mercado, demonstrando como uma desaceleração econômica global pode desvalorizar abruptamente ativos. Empresas que anteciparam a crise ou ajustaram suas operações para lidar com a queda na demanda por petróleo foram mais capazes de sobreviver e até prosperar em um ambiente desfavorável.
+
+Durante o Colapso do Petróleo (2014-2016), companhias que reconheceram a superprodução de petróleo e sua relação com a política da OPEP poderiam ter planejado melhor suas finanças e estoques, evitando prejuízos desnecessários.
+
+A pandemia de COVID-19 (2020) mostrou que as empresas que souberam interpretar a queda acentuada dos preços e armazenar petróleo barato obtiveram vantagens econômicas significativas, aproveitando oportunidades em tempos de crise.
+
+O conflito Rússia-Ucrânia (2022) evidenciou como fatores geopolíticos podem alterar drasticamente o mercado, provando que empresas que monitoram o contexto geopolítico e entendem os impactos de sanções, conseguem antecipar custos mais altos e reavaliar contratos e cadeias de fornecimento.
+
+O monitoramento contínuo de eventos globais e a elaboração de cenários futuros são fundamentais para mitigar a exposição a riscos. Com esse objetivo, foi desenvolvido um modelo preditivo que utiliza o histórico completo de preços para identificar tendências e antecipar movimentos de mercado.
+'''
+)
+
 # Previsão Prophet
+
+st.subheader('Análise Preditiva')
+
+st.write('''
+
+Para fazer a análise preditiva foi utilizado o algoritmo de machine learning Prophet, com parâmetros cuidadosamente ajustados e testados. O modelo também incorporou os períodos de eventos relevantes mencionados anteriormente, garantindo maior precisão nas previsões.
+
+Para avaliar a eficácia do modelo, foram aplicadas as métricas MSE (Erro Quadrático Médio) e RMSE (Raiz do Erro Quadrático Médio), que alcançaram valores excelentes de 23,73 e 4,87, respectivamente.
+
+O modelo foi treinado com o histórico de preços até o dia 18 de novembro de 2024. Logo, a previsão será gerada a partir do dia 19 de novembro de 2024.
+
+A previsão pode ser realizada selecionando, abaixo, a quantidade de dias desejados para projeção.
+
+''')
 
 def load_model():
     with open('modelo_prophet.json', 'r') as file_in:
@@ -193,9 +224,7 @@ def load_model():
                 
 modelo = load_model()
 
-st.subheader('Insira o número de dias para previsão:')
-
-dias = st.number_input(' ', min_value=1, value=1, step=1)
+dias = st.number_input('Insira o número de dias para previsão:', min_value=1, value=1, step=1)
 
 if 'previsao_feita' not in st.session_state:
     st.session_state['previsao_feita'] = False
