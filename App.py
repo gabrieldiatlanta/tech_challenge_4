@@ -146,7 +146,7 @@ if escolha == "2014-2016: Colapso do Petróleo":
     
     Essa combinação de alta oferta e demanda enfraquecida resultou em um desequilíbrio significativo no mercado.
 
-    Como consequência, o preço do petróleo Brent, despencou de aproximadamente US\$ 110 por barril em meados de 2014 para menos de 30 no início de 2016, marcando um dos períodos mais críticos para a indústria petrolífera nas últimas décadas. 
+    Como consequência, o preço do petróleo Brent, despencou de aproximadamente US\$ 110 por barril em meados de 2014 para menos de US\$ 30 no início de 2016, marcando um dos períodos mais críticos para a indústria petrolífera nas últimas décadas. 
     O
     Essa crise impactou severamente as economias dependentes de exportação de petróleo, como Rússia e Venezuela, além de forçar grandes cortes de custos e reestruturações em empresas do setor.
     '''
